@@ -1,0 +1,23 @@
+# GET request
+curl https://jsonplaceholder.typicode.com/posts/1
+
+# GET another resource (Authorization test)
+curl https://jsonplaceholder.typicode.com/posts/2
+
+# POST request
+curl -X POST https://jsonplaceholder.typicode.com/posts \
+-H "Content-Type: application/json" \
+-d '{"title":"security test","body":"demo","userId":1}'
+
+# PUT request
+curl -X PUT https://jsonplaceholder.typicode.com/posts/1 \
+-H "Content-Type: application/json" \
+-d '{"id":1,"title":"updated","body":"data","userId":1}'
+
+# DELETE request
+curl -X DELETE https://jsonplaceholder.typicode.com/posts/1
+
+# Rate limiting test
+for i in {1..50}; do
+curl https://jsonplaceholder.typicode.com/posts/1
+done
